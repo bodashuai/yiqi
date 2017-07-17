@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: "苹方";
+}
+html,body{
+    font-size: 62.5%;
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+#mj_box2{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+#mj_header2{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.6rem;
+    color: #333;
+    padding: 1% 2%;
+    border-bottom: 1px solid #999;
+}
+#mj_main2{
+    height: 100%;
+    overflow: hidden;
+    .mj_con{
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid #999;
+        align-items: center;
+        padding: 5%;
+        .mj_imgP{
+            width: 20%;
+            img{
+                width: 100%;
+                border-radius: 100%;
+            }
+        }
+        .mj_text{
+            width: 55%;
+            letter-spacing: 5px;
+            h3{
+                font-size: 1.8rem;
+                color: #333;
+            }
+            .mj_f{
+                font-size: 1.2rem;
+            }
+            .mj_hua{
+                font-size: 1.3rem;
+                color: #666;
+            }
+        }
+        span{
+            border: 1px solid #333;
+            font-size: 1.2rem;
+        }
+    }
+}

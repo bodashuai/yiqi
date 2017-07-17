@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="../css/index.css" />
+		<link rel="stylesheet" href="../iconfont/iconfont.css" />
+	</head>
+	<body>
+		<div class="Yheader">
+			<span>登录</span>
+		</div>
+		<div class="Ybanner">
+			<div>
+				<img src="images/LOGO.jpg"/>
+			</div>
+		</div>
+		<div class="Yipt">
+			<input type="text" placeholder="输入手机号" id="Yput"/>
+			<input type="password" placeholder="密码" id="Yinput"/>
+			<span class="s1 iconfont icon-user"></span>
+			<span class="s2 iconfont icon-click" id="yan"></span>
+		</div>
+		<div class="Ywen">
+			<span id="Yji">忘记密码</span>
+			<span id="Yxin">新用户注册</span>
+		</div>
+		<div class="YDL">
+			<div id="DL">登录</div>
+		</div>
+		<div class="Yzi">
+			<span>点击登录表示您同意<a href="#">软件许可及服务协议</a></span>
+		</div>
+		<div class="Yqt">
+			<div>
+				<li></li>
+				<li>使用其它账号登录</li>
+				<li></li>
+			</div>
+		</div>
+		<div class="YQQ">
+			<div id="">
+				<ul>
+					<li><img src="images/1_03.png"/>
+					<p>微信</p></li>
+					<li id="lis"><img src="images/2_05.png"/>
+					<p>QQ</p></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script>
+		
+		var yan=document.getElementById("yan");
+		var ipt=document.getElementById("Yinput");
+		var t=true;
+		yan.onclick=function(){
+			
+			if(t==true){
+				ipt.type="text";
+				t=false;
+			}else{
+				ipt.type="password"
+				t=true;
+			}
+		}
+		
+		var DL=document.getElementById("DL");
+		var Yput=document.getElementById("Yput");
+		l=true;
+		a=true;
+		DL.onclick=function(){
+			
+			if(localStorage.length>0){
+				
+			for(var i=0;i<localStorage.length;i++){
+				var val=localStorage.key(i);
+				var dui=localStorage.getItem(val);
+				var obj1=JSON.parse(dui);
+				
+				if(Yput.value==obj1.key){
+					l=true;
+					if(Yinput.value==obj1.password){
+						a=true;
+						window.location.href="../../home/index.html"
+						break;
+					}else{
+						a=false;
+					}
+					break;
+				}else{
+					l=false;
+				}
+			
+			}
+			if(l==false){
+				alert("账号错误")
+			}
+			if(a==false){
+				alert("密码错误")
+			}
+		}
+	}
+		lis.onclick=function(){
+			window.location.href="qq2.html"
+		}
+var Yji=document.getElementById("Yji");
+var Yxin=document.getElementById("Yxin");
+Yji.onclick=function(){
+	window.location.href="index2.html";
+}
+	
+Yxin.onclick=function(){
+	window.location.href="index1.html";
+}
+			
+		
+</script>
+</html>

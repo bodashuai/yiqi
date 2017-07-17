@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/study_works.css">
+    <title>作品</title>
+</head>
+<body ng-controller="myctrl">
+<!--z_header-->
+<div id="z_header">
+    <div class="iconfont icon-back click_back" onclick="window.history.back()"></div>
+    作品
+</div>
+<!--z_wrapper-->
+<div id="z_wrapper">
+    <div id="z_mian">
+    <div class="works">
+        <div class="works_img">
+            <img ng-src="img/{{work1.img}}">
+        </div>
+        <p class="wroks_h">{{work1.head}}<span class="guan">关注</span></p>
+        <div class="wroks_mian">
+            <p>
+               {{work1.tit}}
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+    </div>
+</div>
+
+<!--script-->
+<script src="js/iscroll.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script>
+
+    document.addEventListener("touchmove", function (ev) {
+        ev.preventDefault();
+    }, {passive: false});
+    var myIscroll = new IScroll('#z_wrapper', {
+        click: true,
+        tap: true
+    });
+    setTimeout(function () {
+        myIscroll.refresh();
+    }, 500)
+
+    var app = angular.module("app", []);
+    app.controller("myctrl", function ($scope, $http, $location) {
+        $http.get("data/study_works.json").success(function (data) {
+           $scope.work1=data.work1[0]
+            console.log($scope.work1)
+        })
+        $scope.jump = function (url) {
+            window.location = url;
+        }
+    })
+    $(".view").hide();
+    $(".view").eq(1).show();
+
+    $(".sketch_nav li").on("click", function () {
+        $ind = $(this).index();
+//        alert($ind);
+        $(".sketch_nav li").removeClass("active")
+        $(this).addClass("active")
+        $(".view").hide();
+        $(".view").eq($ind).show();
+    })
+</script>
+</body>
+</html>

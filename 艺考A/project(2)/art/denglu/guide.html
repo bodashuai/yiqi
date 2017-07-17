@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="../css/swiper.min.css" />
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.swiper-slide{
+			width: 100%;
+			height: 100%;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="img/q1.jpg" />
+				</div>
+				<div class="swiper-slide">
+					<img src="img/q2.jpg" />
+				</div>
+				<div class="swiper-slide">
+					<img src="img/q3.jpg" />
+				</div>
+				<div class="swiper-slide" id="Yjj">
+					<img src="img/q4.jpg" />
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script type="text/javascript" src="../js/swiper.min.js" ></script>
+	<script src="js/jquery-3.1.1.min.js"></script>
+
+	<script>
+		var $width = $(window).width();
+		var $height = $(window).height();
+		$("img").css({"width":$width,"height":$height})
+		var myswiper= new Swiper(".swiper-container",{
+						speed:1000,
+			})
+		var Yjj=document.getElementById("Yjj");
+		Yjj.onclick=function(){
+			window.location.href="index.html";
+		}
+	</script>
+</html>

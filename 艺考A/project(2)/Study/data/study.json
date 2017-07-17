@@ -1,0 +1,40 @@
+﻿[
+  {
+    "z_banner":[
+      {"img":"banner1.png"},
+      {"img":"banner2.png"},
+      {"img":"banner1.png"}
+    ],
+    "z_nav":[
+      {"img":"tu01.png","url":"study_drawing.html"},
+      {"img":"tu02.png","url":"study_sketch.html"},
+      {"img":"tu03.png","url":"study_color.html"},
+      {"img":"tu04.png","url":"study_tiku.html"}
+    ],
+    "z_content01":[
+      {"span":[
+        {"span":"名师","url":""},
+        {"span":"作品","url":"study_works.html"}
+      ]},
+      {"li":[
+        {"img":"works%20(1).png"},
+        {"img":"works%20(2).png"},
+        {"img":"works%20(3).png"}
+      ]}
+    ],
+    "z_content02":[
+      {"span":[
+        {"span":"推荐","url":""},
+        {"span":"视频","url":"study_video.html"}
+      ]},
+      {"li":[
+        {"img":"Recommend (3).png"},
+        {"img":"Recommend (1).png"},
+        {"img":"Recommend (2).png"},
+        {"img":"Recommend (1).png"},
+        {"img":"Recommend (2).png"},
+        {"img":"Recommend (3).png"}
+      ]}
+    ]
+  }
+]

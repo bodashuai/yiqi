@@ -1,0 +1,42 @@
+<style>
+
+</style>
+<header id="s_header">
+    <span class="icon icon-menu" style="visibility: hidden"></span>
+    <input type="text" placeholder="素材、教程、视频、笔记">
+    <span class="icon icon-menu" onclick="window.location.href='../Study/study_activity.html'"></span>
+</header>
+<main id="wrapper">
+    <div id="content">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-repeat="items in datas.info">
+                    <img ng-src="img/{{items.img}}" alt="banner">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="content">
+            <div class="s_sum">
+                <a ng-repeat="items in datas.course" href="{{items.url}}"><img ng-src="img/{{items.img}}" alt=""></a>
+            </div>
+            <h3>
+                <a  style="color:#E2398E;">名师</a>
+                <span onclick="window.location.href='../Study/study_works.html'">作品</span>
+            </h3>
+            <div class="s_works">
+                <a href="javascript:;" ng-repeat="items in datas.works2"><img ng-src="img/{{items.img}}" alt=""></a>
+            </div>
+            <h3>
+                <span style="color:#E2398E;">推荐</span>
+                <a onclick="window.location.href='../Study/study_video.html'">视频</a>
+            </h3>
+            <div id="s_video">
+                <a href="javascript:;" ng-repeat="items in datas.video">
+                    <img ng-src="img/{{items.img}}" alt="">
+                    <p ng-bind="items.name"></p>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>

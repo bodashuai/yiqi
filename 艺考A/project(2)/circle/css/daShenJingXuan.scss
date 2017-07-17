@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: "苹方";
+}
+html,body{
+    font-size: 62.5%;
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+#mj_box3{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+#mj_header3{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.6rem;
+    color: #333;
+    padding: 1% 2%;
+    border-bottom: 1px solid #999;
+}
+#mj_main3{
+    height: 100%;
+    overflow: hidden;
+   .mj_tent{
+       padding: 2%;
+       border-bottom: 1px solid #999;
+       .mj_top{
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           .mj_pImg{
+               width: 15%;
+               img{
+                   width: 100%;
+                   border-radius: 100%;
+               }
+           }
+           .mj_tentDiv{
+               width: 60%;
+               letter-spacing: 5px;
+               h3{
+                   color: #333;
+                   font-size: 1.4rem;
+               }
+               .mj_f{
+                   font-size: 1.2rem;
+               }
+           }
+           span{
+              
+           }
+       }
+       .mj_bottom{
+           margin-left: 23%;
+           letter-spacing: 4px;
+           margin-top: -2%;
+           h4{
+               font-size: 1.4rem;
+           }
+           .mj_txtP{
+               font-size: 1.2rem;
+           }
+           .mj_imgUl{
+               display: flex;
+               justify-content: space-between;
+               padding-top: 2%;
+               li{
+                   width: 48%;
+                   letter-spacing: 1px;
+                   img{
+                       width: 100%;
+                       height: 90%;
+                   }
+               }
+           }
+       }
+   }
+}

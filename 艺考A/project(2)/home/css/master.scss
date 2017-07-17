@@ -1,0 +1,65 @@
+@charset "utf-8";
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html{
+  font-size: 62.5%;
+  font-family: "苹方 常规";
+}
+a{
+  text-decoration: none;
+  color:#333;
+}
+#s_header,#s_footer{
+  height:5rem;
+  width:100%;
+  position: absolute;
+  left: 0;
+}
+#s_header{
+  top:0;
+  border-bottom: 1px solid #eee;
+}
+#s_footer{
+  bottom: 0;
+  border-top:1px solid #eee;
+}
+#wrapper{
+  position: absolute;
+  width:100%;
+  top:5rem;
+  bottom:5rem;
+  left:0;
+  background:#F0F0F0;
+  overflow: hidden;
+}
+#content{
+  background: #ffffff;
+}
+
+
+#s_footer div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a{
+    display:block;
+    text-align: center;
+    width:25%;
+    line-height: 1.8rem;
+    margin-top: 0.5rem;
+  }
+}
+#s_footer a>span{
+  font-size:3rem;
+  color:#666666;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+.toClass{
+  color:#E2398E!important;
+}

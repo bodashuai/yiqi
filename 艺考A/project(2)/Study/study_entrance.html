@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/study_entrance.css">
+    <title>色调</title>
+</head>
+<body ng-controller="myctrl">
+<!--z_header-->
+<div id="z_header">
+    <div class="iconfont icon-back click_back" onclick="window.history.back()"></div>
+    色调
+</div>
+<!--z_wrapper-->
+<div id="z_wrapper">
+    <div id="z_mian">
+        <ul class="sketch_nav">
+            <li class="active">冷色调</li>
+            <li>暖色调</li>
+            <li>中性色调</li>
+        </ul>
+        <!--ng-view-->
+        <div class="view">
+            <ul class="sketch_of">
+                <li ng-repeat="i in sketch1"><img ng-src="img/{{i.img}}"></li>
+                <div class="sketch_more">
+                    更多
+                    <div class="iconfont icon-arrow-right more" onclick="window.location.href='#'"></div>
+                </div>
+            </ul>
+            <div class="z_video">
+                <p class="z_videotop">视频教学</p>
+                <ul class="z_ulvideo">
+                    <li ng-repeat="i in video1"><img ng-src="img/{{i.img}}"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="view">
+            <ul class="sketch_of">
+                <li ng-repeat="i in sketch2"><img ng-src="img/{{i.img}}"></li>
+                <div class="sketch_more">
+                    更多
+                    <div class="iconfont icon-arrow-right more" onclick="window.location.href='#'"></div>
+                </div>
+            </ul>
+            <div class="z_video">
+                <p class="z_videotop">视频教学</p>
+                <ul class="z_ulvideo">
+                    <li ng-repeat="i in video2"><img ng-src="img/{{i.img}}"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="view">
+            <ul class="sketch_of">
+                <li ng-repeat="i in sketch3"><img ng-src="img/{{i.img}}"></li>
+                <div class="sketch_more">
+                    更多
+                    <div class="iconfont icon-arrow-right more" onclick="window.location.href='#'"></div>
+                </div>
+            </ul>
+            <div class="z_video">
+                <p class="z_videotop">视频教学</p>
+                <ul class="z_ulvideo">
+                    <li ng-repeat="i in video3"><img ng-src="img/{{i.img}}"></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<!--script-->
+<script src="js/iscroll.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script>
+    document.addEventListener("touchmove", function (ev) {
+        ev.preventDefault();
+    }, {passive: false});
+    var myIscroll = new IScroll('#z_wrapper', {
+        click: true,
+        tap: true
+    });
+    setTimeout(function () {
+        myIscroll.refresh();
+    }, 500)
+
+        var app = angular.module("app", []);
+        app.controller("myctrl", function ($scope, $http, $location) {
+            $http.get("data/study_entrance.json").success(function (data) {
+                $scope.sketch1 = data[0].sketch;
+                $scope.video1 = data[0].video;
+                $scope.sketch2 = data[1].sketch;
+                $scope.video2 = data[1].video;
+                $scope.sketch3 = data[2].sketch;
+                $scope.video3 = data[2].video;
+                $scope.sketch4 = data[3].sketch;
+                $scope.video4 = data[3].video;
+                console.log(data)
+            })
+            $scope.jump = function (url) {
+                window.location = url;
+            }
+        })
+        $(".view").hide();
+        $(".view").eq(0).show();
+
+        $(".sketch_nav li").on("click", function () {
+            $ind = $(this).index();
+//        alert($ind);
+            $(".sketch_nav li").removeClass("active")
+            $(this).addClass("active")
+            $(".view").hide();
+            $(".view").eq($ind).show();
+        })
+
+</script>
+</body>
+</html>

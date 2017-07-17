@@ -1,0 +1,117 @@
+<style type="text/css">
+	.swiper-container{
+		margin-top: 1%;
+	}
+	.swiper-slide img{
+		max-width: 100%;
+	}
+	#mj_bang{
+		display: flex;
+		justify-content: space-around;
+		padding: 2% 0;
+	}
+	#mj_bang a{
+		text-align: center;
+		padding:0 10%;
+		font-size: 1.5rem;
+	}
+	#mj_bang li{
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	#mj_bang li img{
+		width: 20%;
+	}
+	#mj_bang a:nth-child(1){
+		border-right: 1px solid #999;
+	}
+	#mj_yu{
+		width: 100%;
+		height: 5px;
+		background: #ccc;
+	}
+	 .mj_txtDiv{
+            height: 50px;
+            line-height: 32px;
+            padding: 2%;
+         }
+          .mj_txtDiv  p img{
+                width: 15%;
+                border-radius: 100%;
+                float:left;
+                margin-right:2rem;
+            }
+          .mj_txtDiv  h3{
+                font-size: 1.6rem;
+                color: #333;
+             }
+            .mj_txtDiv  h3  span{
+                    margin-left: 30px;
+                }
+           .mj_txtDiv p{
+                font-size: 1.3rem;
+                color: #666;
+            }
+        .mj_imgDiv{
+            padding: 2% 0;
+            display: flex;
+            justify-content: space-around;
+         }
+          .mj_imgDiv  p{
+                width: 47%;
+             }
+            .mj_imgDiv  p img{
+                    width: 100%;
+                }
+        .mj_content a p{
+            display: flex;
+            justify-content: flex-end;
+            font-size: 1.2rem;
+            color: #999;
+            }
+           .mj_content a p span{
+                margin-right: 15px;
+            }
+</style>
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide" ng-repeat="i in list.daShenSwiper">
+			<img ng-src='images/2_02.png'/>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+</div>
+<ul id="mj_bang">
+	<!--<li ng-repeat="i in list.bang">
+		<img ng-src={{i.img}}/>
+		<h3>{{i.h3}}</h3>
+	</li>	-->	
+	<a href="daShenPaiHang.html">
+		<li>
+			<img src="images/2_05.png"/>
+			<h3>大神排行榜</h3>
+		</li>
+	</a>
+	
+	<a href="daShenJingXuan.html">
+		<li>
+			<img src="images/2_07.png"/>
+			<h3>大神精选榜</h3>
+		</li>
+	</a>
+	
+</ul>
+<div id="mj_yu"></div>
+<div class="mj_content" ng-repeat="i in list.clone">
+	<div class="mj_txtDiv">
+		<p><img ng-src={{i.img}}/></p>
+		<h3>{{i.h3}}<span>{{i.span}}</span></h3>
+		<p>{{i.p}}</p>
+	</div>
+	<div class="mj_imgDiv">
+		<p><img ng-src={{i.src1}}/></p>
+		<p><img ng-src={{i.src2}}/></p>
+	</div>
+	<a href="xingXing.html"><p><span>{{i.span1}}</span><span>{{i.span2}}</span></p></a>
+</div>

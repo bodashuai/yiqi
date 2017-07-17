@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+    font-family: "苹方", "Arail";
+}
+
+#z_header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    background: #ffffff;
+    font-size: 2.4rem;
+    text-align: center;
+    line-height: 5rem;
+    border-bottom: 1px solid #F1F1F1;
+    z-index: 5;
+}
+
+#z_wrapper {
+    position: absolute;
+    top: 5rem;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: gainsboro;
+    overflow: hidden;
+}
+
+#z_mian {
+
+    background: #F0F0F0;
+}
+
+.click_back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+}
+.works{
+    width: 95%;
+    margin: 0 auto;
+}
+.works_img img{
+    width: 100%;
+}
+.works_img video{
+    width: 100%;
+}
+.wroks_h{
+    margin: 1rem 0;
+    font-size: 2rem;
+    height: 3rem;
+    line-height: 3rem;
+    background: #ffffff;
+
+}
+.wroks_mian{
+    padding: 2rem 0 10rem 0;
+    background: #ffffff;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+.wroks_mian p{
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+.guan{
+    float: right;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    margin: 0.6rem 0.5rem;
+    color: #E972AE;
+    border: 1px solid #E972AE;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    padding: 0 0.2rem;
+}
+
+
+

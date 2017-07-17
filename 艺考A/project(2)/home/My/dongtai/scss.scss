@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:"苹方";
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+html{
+    font-size: 62.5%;
+}
+html,body,#box{
+   height: 100%;
+}
+main{
+    overflow: hidden;
+    height: 100%;
+}
+#box{
+    display: flex;
+    flex-flow:column ;
+}
+.head{
+  
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    padding: 2% 0;
+    nav{
+       height: 100%;
+       width: 95%;
+       margin: 0 auto;
+       display: flex;
+       flex-flow: row nowrap;
+       justify-content: space-between; 
+       align-items: center;
+       p{
+           color: #333;
+           font-size:2.6rem ;
+       }
+       img{
+           height: 2.6rem;
+       }
+       .yin{
+           visibility: hidden;
+       }
+    }
+}
+.sec1{
+
+  
+    width: 100%;
+    .sec1top{
+        
+        width: 96%;
+        margin: 0 auto;
+        margin-top: 15px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        img{
+           height: 4.5rem; 
+        }
+        p{
+            margin-left: 1rem;
+            font-size: 1.9rem;
+            color: #666;
+        }
+        span{
+            color: #666;
+            font-size: 1.4rem;
+            margin-left: 1.5rem;
+        }
+    }
+    .tu{
+     
+        width: 96%;
+        margin: 0 auto;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        img{
+            width: 32%;
+            height: 120px;
+        }
+    }
+    .last{
+        color: #666;
+        width: 96%;
+        margin: 0 auto;
+        margin-top: 5px;
+        p{
+            font-size: 1.7rem;
+            
+        }
+        .xiao{
+                font-size: 1.4rem;
+            }
+    }
+}

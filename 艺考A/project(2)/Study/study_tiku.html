@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/study_tiku.css">
+    <title>题库</title>
+</head>
+<body ng-controller="myctrl">
+<!--z_header-->
+<div id="z_header">
+    <div class="iconfont icon-back click_back" onclick="window.history.back()"></div>
+    题库
+</div>
+<!--z_wrapper-->
+<div id="z_wrapper">
+    <div id="z_mian">
+            <ul class="tiku_nav">
+                <li class="active">历年统考考题</li>
+                <li>各大院校考题</li>
+                <li>各省预测考题</li>
+            </ul>
+            <!--ng-view-->
+
+        <div class="view">
+        <div class="z_tiku">
+            <p class="z_top">{{top2016.top[0].p}}</p>
+            <div class="tiku_mian">
+                <p ng-repeat="i in top2016.tit">{{i.tiltle}}</p>
+            </div>
+            <p class="z_top">{{top2016.top[1].p}}</p>
+            <ul class="tiku_of">
+                <li ng-repeat="i in top2016.photo"><img ng-src="img/{{i.img}}" alt=""></li>
+                <div class="tiku_more">
+                    更多
+                    <div class="iconfont icon-arrow-right more"></div>
+                </div>
+            </ul>
+        </div>
+        <div class="z_tiku">
+            <p class="z_top">{{top2015.top[0].p}}</p>
+            <div class="tiku_mian">
+                <p ng-repeat="i in top2015.tit">{{i.tiltle}}</p>
+            </div>
+            <p class="z_top">{{top2015.top2[1].p}}</p>
+            <ul class="tiku_of">
+                <li ng-repeat="i in top2015.photo"><img ng-src="img/{{i.img}}" alt=""></li>
+                <div class="tiku_more">
+                    更多
+                    <div class="iconfont icon-arrow-right more"></div>
+                </div>
+            </ul>
+        </div>
+        </div>
+        <div class="view">
+        <div class="z_tiku">
+            <p class="z_top">{{qinghua.top[0].p}}</p>
+            <div class="tiku_mian">
+                <p ng-repeat="i in qinghua.tit">{{i.tiltle}}</p>
+            </div>
+            <p class="z_top">{{qinghua.top[1].p}}</p>
+            <ul class="tiku_of">
+                <li ng-repeat="i in qinghua.photo"><img ng-src="img/{{i.img}}" alt=""></li>
+                <div class="tiku_more">
+                    更多
+                    <div class="iconfont icon-arrow-right more"></div>
+                </div>
+            </ul>
+        </div>
+        <div class="z_tiku">
+            <p class="z_top">{{guomei.top[0].p}}</p>
+            <div class="tiku_mian">
+                <p ng-repeat="i in guomei.tit">{{i.tiltle}}</p>
+            </div>
+            <p class="z_top">{{guomei.top2[1].p}}</p>
+            <ul class="tiku_of">
+                <li ng-repeat="i in guomei.photo"><img ng-src="img/{{i.img}}" alt=""></li>
+                <div class="tiku_more">
+                    更多
+                    <div class="iconfont icon-arrow-right more"></div>
+                </div>
+            </ul>
+        </div>
+        </div>
+        <div class="view">
+        <div class="z_tiku">
+            <p class="z_top">{{bj2017.top[0].p}}</p>
+            <div class="tiku_mian">
+                <p ng-repeat="i in bj2017.tit">{{i.tiltle}}</p>
+            </div>
+            <p class="z_top">{{top2016.top[1].p}}</p>
+            <ul class="tiku_of">
+                <li ng-repeat="i in bj2017.photo"><img ng-src="img/{{i.img}}" alt=""></li>
+                <div class="tiku_more">
+                    更多
+                    <div class="iconfont icon-arrow-right more"></div>
+                </div>
+            </ul>
+        </div>
+        <div class="z_tiku">
+            <p class="z_top">{{sh2017.top[0].p}}</p>
+            <div class="tiku_mian">
+                <p ng-repeat="i in sh2017.tit">{{i.tiltle}}</p>
+            </div>
+            <p class="z_top">{{sh2017.top2[1].p}}</p>
+            <ul class="tiku_of">
+                <li ng-repeat="i in sh2017.photo"><img ng-src="img/{{i.img}}" alt=""></li>
+                <div class="tiku_more">
+                    更多
+                    <div class="iconfont icon-arrow-right more"></div>
+                </div>
+            </ul>
+        </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!--script-->
+<script src="js/iscroll.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script>
+
+    document.addEventListener("touchmove", function (ev) {
+        ev.preventDefault();
+    }, {passive: false});
+    var myIscroll = new IScroll('#z_wrapper', {
+        click: true,
+        tap: true
+    });
+    setTimeout(function () {
+        myIscroll.refresh();
+    }, 500)
+
+    var app = angular.module("app", []);
+    app.controller("myctrl", function ($scope, $http, $location) {
+        $http.get("data/study_tiku.json").success(function (data) {
+            $scope.top2016 = data.top2016[0];
+            $scope.top2015 = data.top2015[0];
+            $scope.qinghua= data.qinghua[0];
+            $scope.guomei= data.guomei[0];
+            $scope.bj2017= data.bj2017[0];
+            $scope.sh2017= data.sh2017[0];
+
+        })
+        $scope.jump = function (url) {
+            window.location = url;
+        }
+    })
+    $(".view").hide();
+    $(".view").eq(0).show();
+
+    $(".tiku_nav li").on("click", function () {
+        $ind = $(this).index();
+//        alert($ind);
+        $(".tiku_nav li").removeClass("active")
+        $(this).addClass("active")
+        $(".view").hide();
+        $(".view").eq($ind).show();
+    })
+
+</script>
+</body>
+</html>

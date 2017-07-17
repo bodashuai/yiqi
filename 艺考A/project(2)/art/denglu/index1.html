@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="../css/index.css" />
+		<link rel="stylesheet" href="../iconfont/iconfont.css" />
+	</head>
+	<body>
+		<div class="Yheader1">
+			<li class="iconfont icon-back" style="font-size: 2.5rem;" onclick="window.history.back()"></li>
+			<li>注册</li>
+			<li></li>
+		</div>
+		<div class="Yipt" style="height: 20rem;">
+			<div>
+				<input type="text" placeholder="请输入你的手机号码"/>
+				<input type="password" style="margin-top: 2rem;" placeholder="请输入你的密码" id="Yinput"/>
+				<input type="password" style="margin-top: 2rem;" placeholder="请确认你的密码" id="Yinput1"/>
+				
+				<span class="s1 iconfont icon-user" style="top: 5%"></span>
+					
+				<span class="s2 iconfont icon-click"  id="yan" style="top:35%"></span>
+				
+				<span class="s3 iconfont icon-click" id="yan1"></span>
+				
+			</div>
+		</div>
+		
+		<div class="YDL">
+			<div>
+				注册
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js" ></script>
+	<script>
+		var yan=document.getElementById("yan")
+		var ipt=document.getElementById("Yinput")
+		var yan1=document.getElementById("yan1")
+		var ipt1=document.getElementById("Yinput1")
+		var t=true;
+		var l=true;
+		yan.onclick=function(){
+			
+			if(t==true){
+				ipt.type="text";
+				t=false;
+			}else{
+				ipt.type="password"
+				t=true;
+			}
+		}
+		yan1.onclick=function(){
+			
+			if(l==true){
+				ipt1.type="text";
+				l=false;
+			}else{
+				ipt1.type="password"
+				l=true;
+			}
+		}
+	
+		var a=/^\d{11}$/
+		$(".YDL div").click(function(){
+			if(a.test($("input").eq(0).val())){
+
+			if($("input").eq(1).val()!=$("input").eq(2).val()){
+				alert("两次密码输入不一致")
+			}else{
+				var obj =new Object;
+				obj.key=$(":text").val();
+				obj.password=$(":password").eq(1).val();
+				var str =JSON.stringify(obj);
+				localStorage.setItem(obj.key,str)
+				window.location.href="index3.html";
+			}
+				
+			}else{
+				alert("请输入正确的手机号位数")
+			}
+			
+				
+			
+			
+	})
+		
+	</script>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="scss.css"/>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<div id="moTai">
+			<div class="monei">分享成功！</div>
+		</div>
+		<div id="box">
+		<header class="head">
+			<nav>
+				<a onclick="window.history.back()"><img src="img/left.png" alt="" /></a>
+				<p>动态详情</p>
+				<img src="img/left.png" alt=""  class="yin"/>
+			</nav>
+		</header>
+		<main>
+			<div class="mdiv">
+				<section class="sec1">
+					<img src="img/tou1.png" alt="" />
+	               <div>
+	               	<p>月妈光大</p>
+	               	<p class="xiao">静物油画难画么？不会化妆的妹子不画油画吗...</p>
+	               </div>				
+				</section>
+		    <section class="sec2">
+		    	<div>
+		    		<img src="img/s1.png"/>
+		    		<img src="img/s2.png"/>
+		    	</div>
+		    		<div>
+		    		<img src="img/s3.png"/>
+		    		<img src="img/s4.png"/>
+		    	</div>
+		    </section>
+		    <footer>
+		    	<div class="shoucang"><img src="img/b1.png"/><span>收藏</span></div>
+		    	<div class="ping"><img src="img/b2.png"/><span>评论</span></div>
+		    	<div class="fenxiang"><img src="img/b3.png"/><span>分享</span></div>
+		    </footer>
+		    <div class="p_lun"><input type="text" placeholder="表达一下你的想法吧！" class="txt" /><button class="fa_s">发送</button></div>
+		    </div>
+		</main>
+		</div>
+	</body>
+	<script>
+	        var hgt = document.documentElement.clientHeight;
+			var bod = document.getElementsByTagName("body")[0];
+			bod.style.height = hgt+"px";
+			//适应屏幕高度
+			setTimeout(function(){
+				var myiscroll=new IScroll("main",{
+					click:true,
+					tap:true
+				})
+			})
+		$(".fenxiang").click(function(){
+			$(".monei").html("分享成功！")
+			$("#moTai").fadeIn()
+		})
+		//点击分享
+		$(".shoucang").click(function(){
+			$(".monei").html("已收藏！")
+			$("#moTai").fadeIn()
+		})
+		//点击收藏
+		$(".ping").click(function(){
+			$(".p_lun").show()
+		})
+		//点击评论显示输入框
+		var a=0;
+		$(".fa_s").click(function(){
+			//点击发送按钮
+			var str="";
+			if($(".txt").val()!=""){
+				a++;
+				str="<div class='lst'><img src='img/tou2.png'/><div class='pp'><p>小阿鑫</p><span>"+$(".txt").val()+"</span></div></div>";
+				$(".p_lun").hide()
+				//评论成功后隐藏文本框和按钮
+				$(".txt").val("")
+				//评论成功请清空文本框
+			}
+			$(".mdiv").append(str)
+			$(".mdiv")[0].style.marginTop=-a*45+"px"
+		})
+				   
+//		    document.onkeydown=function(event){
+//          var e = event || window.event || arguments.callee.caller.arguments[0];
+//          if(e && e.keyCode==27){ // 按 Esc 
+//              //要做的事情
+//            }
+//          if(e && e.keyCode==113){ // 按 F2 
+//               //要做的事情
+//             }            
+//           if(e && e.keyCode==13){ // enter 键
+//               var str="";
+//			   if($(".txt").val()!=""){
+//				str="<div class='lst'><img src='img/tou2.png'/><div class='pp'><p>小阿鑫</p><span>"+$(".txt").val()+"</span></div></div>";
+//				$(".p_lun").hide()
+//				//评论成功后隐藏文本框和按钮
+//				$(".txt").val("")
+//				//评论成功请清空文本框
+//			  }
+//			   $(".mdiv").append(str)
+//          }
+//      }; 		   
+	
+				
+				
+		$("#moTai").click(function(){
+			$("#moTai").fadeOut()
+		})
+	</script>
+</html>
+ 

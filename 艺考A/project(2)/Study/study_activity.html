@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/study_activity.css">
+    <title>活动</title>
+</head>
+<body ng-controller="myctrl">
+<!--z_header-->
+<div id="z_header">
+    <div class="iconfont icon-back click_back" onclick="window.history.back()"></div>
+    活动
+</div>
+<!--z_wrapper-->
+<div id="z_wrapper">
+    <div id="z_mian">
+    <ul class="activity">
+        <li ng-repeat="i in data">
+           <div class="ac_left"><img src="img/{{i.img}}"></div>
+           <div class="ac_right">
+               <p>{{i.tit}}</p>
+           </div>
+       </li>
+        <!-- <li>-->
+           <!--<div class="ac_left"><img src="img/activity%20(1).jpg"></div>-->
+           <!--<div class="ac_right">-->
+               <!--<p>红来画室，基地扩大，师力大涨。凡是今日报名者，赠送画具一套。先到先得，数量有限</p>-->
+           <!--</div>-->
+        <!--</li> <li>-->
+           <!--<div class="ac_left"><img src="img/activity%20(2).png"></div>-->
+           <!--<div class="ac_right">-->
+               <!--<p>白旗画室，基地扩大，师力大涨。凡是今日报名者，赠送画具一套。先到先得，数量有限</p>-->
+           <!--</div>-->
+        <!--</li>-->
+    </ul>
+    </div>
+</div>
+
+<!--script-->
+<script src="js/iscroll.js"></script>
+<script src="js/angular.min.js"></script>
+<script>
+
+    document.addEventListener("touchmove",function (ev) {
+        ev.preventDefault();
+    },{passive:false});
+    var myIscroll = new IScroll('#z_wrapper',{
+        click: true,
+        tap: true
+    });
+    setTimeout(function () {
+        myIscroll.refresh();
+    },500)
+    var app = angular.module("app", []);
+    app.controller("myctrl", function ($scope, $http, $location) {
+        $http.get("data/study_activity.json").success(function (data) {
+            $scope.data = data[0].activity;
+            console.log(data)
+        })
+
+        $scope.jump = function(url) {
+            window.location= url;
+        }
+    })
+</script>
+</body>
+</html>

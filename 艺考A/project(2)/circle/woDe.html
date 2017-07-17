@@ -1,0 +1,51 @@
+<style type="text/css">
+	.mj_fa{
+		padding: 2%;
+		border-bottom: 1px solid #999;
+	}
+	.mj_fa h2{
+		color: #333;
+		font-size: 1.6rem;
+	}
+	.mj_center{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1% 0;
+	}
+	.mj_center>p{
+		width: 35%;
+		height: 150px;}
+	.mj_center>p img{
+		width: 100%;
+		height: 100%;
+	}
+	.mj_rightTxt{
+		width: 60%;
+		line-height: 30px;
+	}
+	.mj_rightTxt p{
+		font-size: 1.4rem;
+		text-indent: 3rem;
+	}
+	.mj_bigP{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 1.3rem;
+	}	
+	.mj_bigP a{
+		font-size: 1.8rem;
+	}
+</style>
+<div class="mj_fa" ng-repeat="i in list.wo">
+	<h2>{{i.title}}</h2>
+	<div class="mj_center">
+		<p><img ng-src={{i.img}}/></p>
+		<div class="mj_rightTxt">
+			<h2>{{i.h2}}</h2>
+			<p>{{i.txt}}</p>
+		</div>
+	</div>
+	<p class="mj_bigP"><span>{{i.bottom}}</span><a href="smallXing.html">></a></p>
+</div>

@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:"苹方";
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+html{
+    font-size: 62.5%;
+}
+html,body,#box{
+   height: 100%;
+}
+main{
+    overflow: hidden;
+    height: 100%;
+}
+
+#box{
+    display: flex;
+    flex-flow:column ;
+}
+.head{
+  
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    padding: 2% 0;
+    nav{
+       height: 100%;
+       width: 95%;
+       margin: 0 auto;
+       display: flex;
+       flex-flow: row nowrap;
+       justify-content: space-between; 
+       align-items: center;
+       p{
+           color: #333;
+           font-size:2.6rem ;
+       }
+       img{
+           height: 2.6rem;
+       }
+       .yin{
+           visibility: hidden;
+       }
+    }
+}
+.sec1{
+    
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    div{
+        color: #666;
+        width: 83%;
+        font-size: 1.9rem;
+        .xiao{
+            font-size: 1.4rem;
+        }
+    }
+    
+    img{
+        height: 5rem;
+    }
+}
+.sec2{
+    width: 90%;
+    margin: 0 auto;
+    div{
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-flow:row nowrap;
+        justify-content: space-between;
+        img{
+            height: 250px;
+            width: 49%;
+        }
+    }
+}
+footer{
+    height: 5rem;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        width: 33%;
+        border: 2px solid #eee;
+        font-size: 2rem;
+        img{
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+        span{
+            color: #666;
+            margin-left: 4%;
+        }
+        }
+        
+}
+
+
+#moTai{
+    display: none;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+    .monei{
+        line-height: 200px;
+        font-size: 25px;
+        width: 80%;
+        height: 200px;
+        background: #fff;
+        text-align: center;
+        margin: 30% auto;
+       textarea{
+           height: 100%;
+           width: 100%;
+       }
+    }
+}
+.p_lun{
+ 
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+       display: none;
+    input{
+        margin-left: 5px;
+        width: 73%;
+        height: 2.8rem;
+    }
+    button{
+        border: 1px solid #666;
+        background: #fff;
+        width:23% ;
+        height: 3rem;
+    }
+}
+.lst{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    img{
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+    .pp{
+      margin-left: 20px;
+      color: #333;
+      display: flex;
+      flex-flow: column;  
+      font-size: 2rem;   
+     p{
+         
+     }
+    span{
+        color: #666;
+        margin-top: 5px;
+        font-size: 1.7rem;
+    } 
+    }
+}

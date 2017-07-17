@@ -1,0 +1,277 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  font-family: "苹方"; }
+
+.Yheader {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .Yheader span {
+    font-size: 2.2rem;
+    color: #333333; }
+
+.Ybanner {
+  width: 100%;
+  height: 12rem;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .Ybanner div {
+    width: 6rem;
+    height: 6rem; }
+    .Ybanner div img {
+      width: 100%;
+      height: 100%; }
+
+.Yipt {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  flex-flow: column;
+  position: relative; }
+  .Yipt input {
+    width: 100%;
+    height: 4rem;
+    border: 0px;
+    border-bottom: 1px solid #CCCCCC;
+    padding-left: 8%;
+    outline: none; }
+  .Yipt input:nth-child(1) {
+    background: url(../登录/images/t1_03.png) no-repeat;
+    background-position: 95% 50%; }
+  .Yipt input:nth-child(2), .Yipt input:nth-child(3) {
+    background: url(../登录/images/t2_06.png) no-repeat;
+    background-position: 95% 50%; }
+  .Yipt .s1 {
+    display: block;
+    width: 3rem;
+    height: 2rem;
+    position: absolute;
+    top: 10%;
+    right: 6%; }
+  .Yipt .s2 {
+    display: block;
+    width: 3rem;
+    height: 2rem;
+    position: absolute;
+    bottom: 10%;
+    right: 6%; }
+  .Yipt .s3 {
+    display: block;
+    width: 3rem;
+    height: 2rem;
+    position: absolute;
+    bottom: 25%;
+    right: 6%; }
+
+.Ywen {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2% 0 2% 0; }
+  .Ywen span {
+    font-size: 1.4rem;
+    color: #E2368E; }
+  .Ywen span:nth-child(1) {
+    padding-left: 5%; }
+  .Ywen span:nth-child(2) {
+    padding-right: 5%; }
+
+.YDL {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2% 0 2% 0; }
+  .YDL div {
+    width: 70%;
+    height: 100%;
+    border: 1px solid #E2368E;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 4rem;
+    color: #E2368E;
+    transition: 2s; }
+    .YDL div:hover {
+      color: #fff;
+      background: #E2368E; }
+
+.Yzi {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .Yzi span {
+    color: #bdbdbd;
+    letter-spacing: 0.25rem; }
+    .Yzi span a {
+      text-decoration: none;
+      color: #85cbd7; }
+
+.Yqt {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center; }
+  .Yqt div {
+    width: 70%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.2rem;
+    color: #999; }
+    .Yqt div li:nth-child(1) {
+      width: 20%;
+      height: 1px;
+      background: #cccccc; }
+    .Yqt div li:nth-child(3) {
+      width: 20%;
+      height: 1px;
+      background: #cccccc; }
+
+.YQQ {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center; }
+  .YQQ div {
+    width: 50%;
+    height: 100%; }
+    .YQQ div ul {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      .YQQ div ul li {
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        color: #999; }
+        .YQQ div ul li img {
+          width: 100%;
+          height: 100%; }
+
+.Yheader1 {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #333333; }
+  .Yheader1 li:nth-child(1) {
+    padding-left: 8%; }
+  .Yheader1 li:nth-child(3) {
+    padding-right: 8%; }
+
+.input {
+  width: 100%;
+  height: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  background: #F5F5F5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .input input {
+    width: 70%;
+    height: 4rem;
+    border: 0px;
+    padding-left: 8%;
+    outline: none;
+    background: #F5F5F5; }
+  .input span {
+    display: block;
+    width: 8rem;
+    height: 3rem;
+    color: #E2368E;
+    border: 1px solid #E2368E;
+    text-align: center;
+    line-height: 3rem;
+    transition: 2s; }
+    .input span:hover {
+      background: #E2368E;
+      color: #fff; }
+
+.motai {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5); }
+  .motai div {
+    width: 70%;
+    height: 30%;
+    z-index: 3;
+    background: #fff;
+    position: relative;
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .motai div span {
+      font-size: 3rem;
+      color: #E2368E; }
+    .motai div span:nth-child(2) {
+      position: absolute;
+      top: 0%;
+      right: 2%;
+      color: red; }
+
+.Yxinxi {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5; }
+  .Yxinxi p {
+    width: 80%;
+    color: #999;
+    font-size: 1.6rem; }
+
+.YIB {
+  width: 100%;
+  height: 4rem; }
+  .YIB input {
+    width: 75%;
+    height: 4rem;
+    border: 0px;
+    outline: none; }
+  .YIB button {
+    width: 25%;
+    height: 4rem;
+    background: #E2368E;
+    border: 0px;
+    outline: none;
+    color: #fff; }
+
+.Ybox {
+  width: 100%;
+  height: 36rem;
+  background: #f5f5f5; }
+
+/*# sourceMappingURL=index.css.map */

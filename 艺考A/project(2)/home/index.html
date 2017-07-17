@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="Font/demo-files/demo.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/study.css">
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        html{
+            font-family: "苹方","Arail";
+        }
+    </style>
+</head>
+<body ng-controller="myCtrl">
+        <ui-view></ui-view>
+        <footer id="s_footer">
+            <div>
+                <a ng-click="btn('first')"><span class="icon icon-vimeo toClass"></span><p class="toClass">画室</p></a>
+                <a ng-click="btn('second')"><span class="icon icon-star-empty"></span><p>学习</p></a>
+                <a ng-click="btn('third')"><span class="icon icon-compass2"></span><p>艺圈</p></a>
+                <a ng-click="btn('four')"><span class="icon icon-smile"></span><p>我的</p></a>
+            </div>
+        </footer>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/iscroll-probe.js"></script>
+<script src="js/swiper-3.4.2.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-ui-router.js"></script>
+<script src="controller/first.js"></script>
+<script>
+    var hgt = document.documentElement.clientHeight;
+    var bod = document.getElementsByTagName("body")[0];
+    bod.style.height = hgt+"px";
+    var app = angular.module("myApp",['ui.router','first']);
+    app.config(function($stateProvider,$urlRouterProvider){
+        $stateProvider
+                .state("first",{
+                    url:"/first",
+                    templateUrl:"html/first.html",
+                    controller:"first_con"
+                })
+                .state("second",{
+                    url:"/second",
+                    templateUrl:"html/second.html",
+                    controller:"first_con"
+                })
+                .state("third",{
+                    url:"/third",
+                    templateUrl:"html/third.html",
+                    controller:"first_con"
+                })
+                .state("four",{
+                    url:"/four",
+                    templateUrl:"html/four.html",
+                    controller:"first_con"
+                });
+        $urlRouterProvider.otherwise('/first')
+    });
+    app.controller("myCtrl",function($scope,$location,$http){
+        $scope.btn = function(url){
+            $location.path(url)
+        };
+        $http.get("js/data.json").success(function(data){
+            $scope.datas = [];
+            $scope.datas = data;
+        })
+    });
+</script>
+</html>

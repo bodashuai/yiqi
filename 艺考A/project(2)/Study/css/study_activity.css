@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+    height: 100%;
+    font-family: "苹方","Arail";
+}
+#z_header{
+    position: absolute;
+    left: 0;top: 0;
+    width: 100%;
+    height: 5rem;
+    background: #ffffff;
+    font-size: 2.4rem;
+    text-align: center;
+    line-height: 5rem;
+    border-bottom: 1px solid #F1F1F1;
+    z-index: 5;
+}
+
+#z_wrapper{
+    position: absolute;
+    top: 5rem;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: gainsboro;
+    overflow: hidden;
+}
+
+
+#z_mian{
+    background: #F0F0F0;
+}
+
+
+@media screen and (max-width: 414px){
+    #z_mian{
+        height:150%;
+    }
+}
+
+.click_back{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+}
+.activity{
+    width: 100%;
+}
+.activity li{
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    background: #fff;
+    display: flex;
+    justify-content:space-between;
+}
+.ac_left{
+    width: 90%;
+}
+.ac_left img{
+    width: 100%;
+}
+.ac_right p{
+    width: 90%;
+    margin:1rem auto;
+    /*padding: 0 1rem;*/
+    line-height: 2rem;
+    font-size: 1.5rem;
+}

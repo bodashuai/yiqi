@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, email=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <link rel="stylesheet" type="text/css" href="iconfont/iconfont.css"/>
+        <link rel="stylesheet" type="text/css" href="css/huaShi.css"/>
+        <script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/iscroll.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/angular-route1.4.5.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body ng-controller="con">
+		<div id="mj_box4">
+			<header id="mj_header6">
+				<span class="iconfont icon-back" onclick="window.history.back()"></span>
+				<span>画室列表</span>
+				<span style="visibility: hidden;"><</span>
+			</header>
+			<main id="mj_main6">
+				<div>
+					<ul id="mj_nav1">
+						<li class="mj_bg" ng-click="fun('/a')">全国</li>
+						<li ng-click="fun('/b')">北京</li>
+						<li ng-click="fun('/c')">浙江</li>
+						<li ng-click="fun('/d')">山西</li>	
+						<li ng-click="fun('/e')">广东</li>
+						<li ng-click="fun('/f')">更多</li>
+						<p></p>
+					</ul>
+					<ng-view></ng-view>
+				</div>
+			</main>
+		</div>
+		<script type="text/javascript">
+			var app=angular.module("app",["ngRoute"]);
+			app.controller("con",function($scope,$http,$location){
+				$scope.fun=function(url){
+					$location.path(url);
+				}
+				$scope.info=null;
+				$http.get("json/huaShi.json").success(function(data){
+					$scope.info=data;
+				})
+			})
+			
+			app.config(function($routeProvider){
+				$routeProvider
+					.when("/a",{
+						templateUrl:"country.html"
+					})
+//					.when("/b",{
+//						template:"<h2>北京</h2>"
+//					})
+//					.when("/c",{
+//						template:"<h2>浙江</h2>"
+//					})
+//					.when("/d",{
+//						template:"<h2>山西</h2>"
+//					})
+//					.when("/e",{
+//						template:"<h2>广东</h2>"
+//					})
+//					.when("/f",{
+//						template:"<h2>更多</h2>"
+//					})
+					.otherwise({
+						redirectTo:"/a"
+					})
+			})
+			setTimeout(function(){
+				var a=new IScroll("#mj_main6",{
+					click:true,
+					tap:true
+				});
+			},500)
+
+			
+			var $wid=$("#mj_nav1>p")[0].offsetWidth;
+			$("#mj_nav1 li").click(function(){
+				var $ind=$(this).index();
+				$(this).addClass("mj_bg");
+				$(this).siblings().removeClass("mj_bg");
+				$("#mj_nav1 p").css({"transform": "translateX("+$wid*$ind+"px)"})
+			})
+		</script>
+	</body>
+</html>

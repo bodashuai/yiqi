@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, email=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<link rel="stylesheet" href="iconfont/iconfont.css">
+        <link rel="stylesheet" type="text/css" href="css/daShenJingXuan.css"/>
+        <script src="js/iscroll.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="mj_box3">
+			<header id="mj_header3">
+				<a class="iconfont icon-back" style="font-size: 3rem" onclick="window.history.back()"></a>
+				<span>大神精选榜</span>
+				<a style="visibility: hidden;"><</a>
+			</header>
+			<main id="mj_main3">
+				<div>
+					
+				</div>
+			</main>
+		</div>
+			<script type="text/javascript">
+				$.ajax({
+					type:"get",
+					url:"json/daShen.json",
+					dateType:"json",
+					success:function(data){
+						for(var i=0;i<data.jingXuan.length;i++){
+							$("#mj_main3>div").append(
+								'<div class="mj_tent">'
+									+'<div class="mj_top">'
+										+'<p class="mj_pImg"><img src='+data.jingXuan[i].img+'/></p>'
+										+'<div class="mj_tentDiv">'
+											+'<h3>'+data.jingXuan[i].h3+'</h3>'
+											+'<p class="mj_f">'+data.jingXuan[i].f+'</p>'
+										+'</div>'	
+										+'<span>'+data.jingXuan[i].span+'</span>'
+									+'</div>'
+									+'<div class="mj_bottom">'
+										+'<h4>'+data.jingXuan[i].h4+'</h4>'
+										+'<p class="mj_txtP">'+data.jingXuan[i].p+'</p>'
+										+'<ul class="mj_imgUl">'
+											+'<li>'
+												+'<img src='+data.jingXuan[i].src1+'/>'
+												+'<p>'+data.jingXuan[i].li1+'</p>'
+											+'</li>'
+											+'<li>'
+												+'<img src='+data.jingXuan[i].src2+'/>'
+												+'<p>'+data.jingXuan[i].li2+'</p>'
+											+'</li>'
+										+'</ul>'
+									+'</div>'					
+								+'</div>'
+							)
+						}
+					}
+				});
+				setTimeout(function(){
+					var mjIscroll=new IScroll("#mj_main3",{
+						click:true,
+						tap:true
+					});
+				},500)
+			</script>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<style type="text/css">
+	@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: "苹方"; }
+
+html, body {
+  font-size: 62.5%;
+  height: 100%; }
+
+
+
+   .mj_tent {
+    padding: 2%;
+    border-bottom: 1px solid #999; }
+     .mj_tent .mj_top {
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      .mj_tent .mj_top span{
+      	font-size: 1.2rem;
+      }
+       .mj_tent .mj_top .mj_pImg {
+        width: 15%; }
+         .mj_tent .mj_top .mj_pImg img {
+          width: 100%;
+          border-radius: 100%; }
+      .mj_tent .mj_top .mj_tentDiv {
+        width: 60%;
+        letter-spacing: 5px; }
+         .mj_tent .mj_top .mj_tentDiv h3 {
+          color: #333;
+          font-size: 1.6rem; }
+        .mj_tent .mj_top .mj_tentDiv .mj_f {
+          font-size: 1.2rem; }
+     .mj_tent .mj_bottom {
+      margin-left: 23%;
+      letter-spacing: 4px;
+      margin-top: -2%; }
+      .mj_tent .mj_bottom h4 {
+        font-size: 1.4rem; }
+      .mj_tent .mj_bottom .mj_txtP {
+        font-size: 1.3rem; }
+       .mj_tent .mj_bottom .mj_imgUl {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2%; }
+        .mj_tent .mj_bottom .mj_imgUl li {
+          width: 48%;
+          letter-spacing: 1px; }
+         .mj_tent .mj_bottom .mj_imgUl li img {
+            width: 100%;
+            height: 90%; }
+
+</style>
+<div class="mj_tent" ng-repeat="i in list.tuCao">
+	<div class="mj_top">
+		<p class="mj_pImg"><img ng-src={{i.img}}/></p>
+		<div class="mj_tentDiv">
+			<h3>{{i.h3}}</h3>
+			<p class="mj_f">{{i.f}}</p>
+		</div>
+		<span>{{i.span}}</span>
+	</div>
+	<div class="mj_bottom">
+		<h4>{{i.h4}}</h4>
+		<p class="mj_txtP">{{i.p}}</p>
+		<ul class="mj_imgUl">
+			<li>
+				<img ng-src={{i.src1}}/>
+				<p>{{i.li1}}</p>
+			</li>
+			<li>
+				<img ng-src={{i.src2}}/>
+				<p>{{i.li2}}</p>
+			</li>
+		</ul>
+	</div>				
+</div>

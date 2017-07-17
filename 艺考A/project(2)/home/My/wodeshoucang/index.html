@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<title></title>
+		<link rel="stylesheet" href="scss.css" />
+		<script src="../js/jquery-3.1.1.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/angular.min.js"></script>
+		<script>
+			angular.module("app",[]).controller("ctrl",function($scope,$http){
+				$scope.obj={};
+				$http.get("json.json").success(function(data){
+					$scope.obj=data;
+				})
+			})
+		</script>
+	</head>
+	<body ng-controller="ctrl">
+		<div id="box">
+			
+	
+		<header class="head">
+			<nav>
+				<a onclick="window.history.back()"><img src="img/left.png" alt="" /></a>
+				<p>我的收藏</p>
+				<img src="img/left.png" alt=""  class="yin"/>
+			</nav>
+		</header>
+		<main>
+           <div style="height: 101%;">
+           	
+		   <section class="sec1" ng-repeat="i in obj.info">
+		   	<div class="sec-div1">
+		   	<p>{{i.p1}}</p>
+		   	<p class="xiao">{{i.p2}}</p>
+		   	</div>
+		   	<div class="sec-div2">
+		   		<img ng-src={{i.img1}} />
+		   		<img ng-src={{i.img2}} />
+		   		<img ng-src={{i.img3}} />
+		   	</div>
+		   	<div class="sec-div3">
+		   		<img src="img/tou1.png" alt="" />
+		   		<p>{{i.p3}}</p>
+		   		<span>{{i.span1}}</span>
+		   		<span>{{i.span2}}</span>
+		   		<span>{{i.span3}}</span>
+		   	</div>
+		   	<p class="tiao"></p>
+		   </section>		
+			
+			
+			
+	        </div>
+	        </main>
+	        
+	       </div>
+	       <script>
+	        var hgt = document.documentElement.clientHeight;
+			var bod = document.getElementsByTagName("body")[0];
+			bod.style.height = hgt+"px";
+			//适应屏幕高度
+	       	var myiscroll=new IScroll("main")
+	       </script>
+	</body>
+</html>

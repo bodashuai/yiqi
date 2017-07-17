@@ -1,0 +1,100 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "鑻规柟"; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background: #F6F5F4; }
+
+html, body, #box {
+  height: 100%; }
+
+main {
+  height: 100%;
+  overflow: hidden; }
+
+#box {
+  display: flex;
+  flex-flow: column; }
+
+.head {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  padding: 2% 0; }
+  .head nav {
+    height: 100%;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center; }
+    .head nav p {
+      color: #333;
+      font-size: 2.6rem; }
+    .head nav img {
+      height: 2.6rem; }
+    .head nav .yin {
+      visibility: hidden; }
+
+.sec1 {
+  color: #666;
+  width: 100%;
+  background: #fff; }
+  .sec1 div {
+    border-bottom: 1px solid #eee;
+    height: 60px;
+    border-bottom: 1px solid #F6F5F4;
+    width: 93%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.8rem; }
+    .sec1 div img {
+      height: 45%; }
+
+.sec2 {
+  margin-top: 10px;
+  width: 100%;
+  background: #fff; }
+  .sec2 .lastdiv {
+    color: #666;
+    height: 60px;
+    border-bottom: 1px solid #F6F5F4;
+    width: 93%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.8rem; }
+    .sec2 .lastdiv img {
+      height: 45%; }
+
+#moTai {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2; }
+  #moTai .monei {
+    line-height: 200px;
+    font-size: 25px;
+    width: 80%;
+    height: 200px;
+    background: #fff;
+    text-align: center;
+    margin: 30% auto; }
+    #moTai .monei textarea {
+      height: 100%;
+      width: 100%; }
+
+/*# sourceMappingURL=scss.css.map */

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="css/study.css">
+    <title>画室</title>
+</head>
+<body ng-controller="myctrl">
+<!--z_header-->
+<div id="z_header">
+    <div class="z_search">
+        <div class="click_search"></div>
+        <input type="text" placeholder="素材，教程，视频，笔记">
+    </div>
+    <div class="z_more" onclick="window.location.href='study_activity.html'"></div>
+</div>
+<!--z_wrapper-->
+<div id="z_wrapper">
+    <div id="z_main">
+        <!---->
+
+        <div class="swiper-container" id="z_banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-repeat="img in z_banner">
+                    <img ng-src="img/{{img.img}}">
+                </div>
+            </div>
+            <!--分页器-->
+            <div class="swiper-pagination"></div>
+        </div>
+
+
+
+        <div id="z_nav">
+            <ul>
+                <li ng-repeat="i in z_nav"><img ng-click="jump(i.url)" ng-src="img/{{i.img}}"></li>
+            </ul>
+        </div>
+        <div class="z_content01" >
+            <h3 class="span_red"><span>{{span1[0].span}}</span><span ng-click="jump(span1[1].url)">{{span1[1].span}}</span></h3>
+            <ul>
+                <li ng-repeat="i in z_content01[1].li">
+                    <img ng-src="img/{{i.img}}">
+                </li>
+
+            </ul>
+        </div>
+        <div class="z_content02">
+            <h3 class="span_red"><span>{{span2[0].span}}</span><span ng-click="jump(span2[1].url)">{{span2[1].span}}</span></h3>
+            <ul>
+                <li ng-repeat="i in z_content02[1].li">
+                    <img ng-src="img/{{i.img}}">
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+
+<!--以上为ng-wiew内容-->
+<!--z_footer-->
+<div id="z_footer">
+
+</div>
+
+<!--script-->
+<script src="js/iscroll.js"></script>
+<script src="js/swiper-3.4.2.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script>
+
+    document.addEventListener("touchmove", function (ev) {
+        ev.preventDefault();
+    }, {passive: false});
+    var myIscroll = new IScroll('#z_wrapper', {
+        click: true,
+        tap: true
+    });
+    setTimeout(function () {
+        myIscroll.refresh();
+        var swiper = new Swiper("#z_banner", {
+            loop: true,
+            autoplay: 1500,
+            autoplayDisableOnInteraction: false,
+            pagination: '#z_banner .swiper-pagination',
+            paginationClickable: true
+        })
+
+    }, 500)
+
+    var app = angular.module("app", []);
+    app.controller("myctrl", function ($scope, $http, $location) {
+        $http.get("data/study.json").success(function (data) {
+            $scope.z_banner = data[0].z_banner;
+            $scope.z_nav = data[0].z_nav;
+            $scope.z_content01 = data[0].z_content01;
+            $scope.z_content02 = data[0].z_content02;
+            $scope.span1 = data[0].z_content01[0].span;
+            $scope.span2 = data[0].z_content02[0].span;
+            console.log(data);
+        })
+
+        $scope.jump = function(url) {
+            window.location= url;
+        }
+    })
+
+</script>
+</body>
+</html>

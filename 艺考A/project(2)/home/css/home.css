@@ -1,0 +1,165 @@
+input{
+    padding: 0;
+    margin: 0;
+}
+
+#s_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#s_header input{
+    width:55%;
+    height:35px;
+    outline: none;
+    border:1px solid #eee;
+    -webkit-border-radius: 10px;
+    text-indent: 2em;
+}
+#s_header span{
+    font-size:2.6rem;
+}
+.swiper-slide img{
+    max-width: 100%;
+}
+.s_bannerBottom p{
+    padding:5px 4%;
+}
+.s_set{
+    padding: 2% 4%;
+}
+.s_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.s_set h2{
+    font-size: 2.2rem;
+}
+.s_set p{
+    font-size: 1.8rem;
+    color:#333;
+}
+.s_tx{
+    display: flex;
+    margin-top: 10px;
+}
+.s_tx>span{
+    display: inline-block;
+    width:50px;
+    height:50px;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+}
+.s_tx>p{
+    margin-left: 3%;
+}
+#author span>img{
+    width:100%;
+    height:100%;
+}
+.s_tp{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.s_tp li{
+    width:32%;
+}
+.s_tp li>img{
+    width:100%;
+}
+.s_details{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5% 0;
+}
+.s_data{
+    display: flex;
+    align-items: center;
+    border: 1px solid #eee;
+}
+.s_data li{
+    width:25%;
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 5px 0;
+}
+body{
+
+}
+#mt{
+    height: 100%;
+    width:100%;
+    background:rgba(0,0,0,0.1);
+    z-index: 2;
+    position: absolute;
+}
+#mt>div{
+    width:85%;
+    height:83%;
+    background:#fff;
+    margin:12% auto;
+    position: relative;
+}
+#mt_wrap>header,footer{
+    height:4rem;
+    position: absolute;
+    left: 0;
+    width:100%;
+}
+#mt_wrap>header{
+    border-bottom: 1px solid #eee;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+#mt_wrap>footer{
+    border-top: 1px solid #eee;
+    bottom:0;
+}
+.s_city{
+    position: absolute;
+    top:4rem;
+    bottom:4rem;
+    left:2.5%;
+    width: 95%;
+}
+.s_city ul{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+.s_city ul>li{
+    width:17%;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+    color:#fff;
+    padding: 1.5% 0;
+    margin-bottom: 2%;
+}
+.s_city h3{
+    line-height: 2.5rem;
+}
+#mt_wrap footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#mt_wrap footer>button{
+    width:45%;
+    -webkit-border-radius: 3px;
+    height:35px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.mt_affirm{
+    color:#fff;
+    background:#E766A4;
+}
+.mt_color{
+    background:#E766A4!important;
+}

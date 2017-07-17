@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="scss.css" />
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<div id="moTai">
+			<div class="monei">尽请期待</div>
+		</div>
+		<div id="box">
+			
+	
+		<header class="head">
+			<nav>
+				<a onclick="window.history.back()"><img src="left.png" alt="" /></a>
+				<p>设置</p>
+				<img src="left.png" alt=""  class="yin"/>
+			</nav>
+		</header>
+		<main>
+           <div style="height: 101%;">
+				<section class="sec1">
+				<div><p>主题</p><img src="right.png" alt="" /></div>
+				<div><p>关于</p><img src="right.png" alt="" /></div>
+				<div><p>版本信息</p><img src="right.png" alt="" /></div>
+				<div><p>清理缓存</p><img src="right.png" alt="" /></div>
+				<div><p>检查更新</p><img src="right.png" alt="" /></div>
+				<div><p>用户反馈</p><img src="right.png" alt="" /></div>
+			
+			</section>
+			<section class="sec2">
+				<div class="lastdiv"><p>退出登录</p><img src="right.png" alt="" /></div>
+	        </section>
+	        </div>
+	        </main>
+	        
+	       </div>
+	</body>
+	<script>
+	var hgt = document.documentElement.clientHeight;
+			var bod = document.getElementsByTagName("body")[0];
+			bod.style.height = hgt+"px";
+			//适应屏幕高度
+	
+			setTimeout(function(){
+				var myscroll=new IScroll("main",{
+					click:true,
+					tap:true
+				})
+			},100)
+			
+			
+			  $(".monei").click(function(){	
+			 	  $("#moTai").fadeOut()
+			 	})
+			  //点击模态框隐藏模态框
+		  $(".sec1 div").eq(0).click(function(){
+		  	   $("#moTai").fadeIn()
+		  	   $(".monei").html("已没更多主题")
+		  })
+		  //点击主题显示模态框以及相对应的内容
+		  $(".sec1 div").eq(1).click(function(){
+		  	   $("#moTai").fadeIn()
+		  	   $(".monei").html("本产品由高成鑫亲自研制")
+		  })
+		   //点击关于显示模态框以及相对应的内容
+		  $(".sec1 div").eq(2).click(function(){
+		  	   $("#moTai").fadeIn()
+		  	   $(".monei").html("当前版本1.1.0")
+		  })
+		  //点击版本信息显示模态框以及相对应的内容
+		  $(".sec1 div").eq(3).click(function(){
+		  	   $("#moTai").fadeIn()
+		  	   $(".monei").html("您的缓存已清理")
+		  })
+		  //点击清除缓存显示模态框以及相对应的内容
+		    $(".sec1 div").eq(4).click(function(){
+		  	   $("#moTai").fadeIn()
+		  	   $(".monei").html("您当前已是最新版本")
+		  })
+		    //点击检测版本显示模态框以及相对应的内容
+		      $(".sec1 div").eq(5).click(function(){
+		  	   $("#moTai").fadeIn()
+		  	     $(".monei").html("")
+		  	   $(".monei").append("<textarea placeholder='您的建议我们一定认真对待'></textarea>")
+		  	   $("textarea").focus()
+		  })
+		      //点击反馈显示模态框以及相对应的内容
+		      
+		      $(".lastdiv").click(function(){
+		      	window.location.href="../../../art/denglu/index.html";
+		      })
+ 
+	</script>
+</html>

@@ -1,0 +1,329 @@
+<style>
+        #s_header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5rem;
+            border-bottom: 1px solid #eeeeee;
+            z-index: 2;
+        }
+        .s_nav ul{
+            display: flex;
+            height: 3.5rem;
+            position: relative;
+        }
+        .s_nav ul li{
+            width:25%;
+            text-align: center;
+            font-size: 1.6rem;
+            line-height: 3.5rem;
+            color:#666;
+        }
+        .s_nav li a{
+            color:#666;
+        }
+        .colors{
+            color:#E2398E!important;
+        }
+        #bord{
+            position: absolute;
+            left: 0;
+            bottom:0;
+            background:#E2398E ;
+            height:3px;
+            width:25%;
+        }
+        .title_inner{
+            display: flex;
+            justify-content: flex-start;
+            width:100%;
+            padding:15px;
+        }
+        .title_a{
+            display: block;
+            width: 50px;
+            height: 50px;
+            -webkit-border-radius: 50%;
+            overflow: hidden;
+        }
+        .title_a img{
+            width: 100%;
+            height: 100%;
+        }
+        .title_inner p{
+            margin-left: 3%;
+            line-height: 2.5rem;
+        }
+        .s_tu{
+            width:80%;
+            margin: 0 auto;
+        }
+        .s_tu>div{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .s_tu>div>a{
+            display: block;
+            width:40%;
+        }
+        .s_tu>div>a img{
+            width:100%;
+            height:100%;
+        }
+        .s_tu>p{
+            display: flex;
+            justify-content: flex-end;
+            color:#999999;
+            font-size: 1.4rem;
+            margin-right: 20px;
+        }
+        .set{
+            width:400%;
+            overflow: hidden;
+        }
+        .s_content{
+            width:100%;
+            display: flex;
+            transition: .5s;
+        }
+        .s_net{
+            width:100%;
+        }
+        .s_ph{
+            height:60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .s_ph p{
+            height:40px;
+            width:50%;
+            line-height: 40px;
+            text-align: center;
+        }
+        .s_ph p>img{
+            max-height: 100%;
+            vertical-align: middle;
+        }
+        .s_ph p>span{
+            font-size: 2rem;
+            font-weight: bold;
+            vertical-align: middle;
+            color:#333;
+            margin-left:6%;
+        }
+    .s_fb{
+        font-size: 1.8rem;
+        border-bottom: 1px solid #eee;
+        padding: 0 2%;
+    }
+    .publish{
+        display: flex;
+        padding: 2%;
+        height:150px;
+    }
+        .publish div{
+            margin-left: 3%;
+        }
+        .publish img {
+            max-height: 100%;
+        }
+        .publish div h3{
+            font-size: 1.6rem;
+        }
+        .f_content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2%;
+            font-size: 2rem;
+        }
+        .f_content span{
+            font-size: 3rem;
+        }
+        .no_1{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3%;
+        }
+        .no_1 span{
+            font-size: 1.6rem;
+            color:#666;
+            font-weight: bold;
+        }
+        .introduce{
+            display: flex;
+            flex-direction: column;
+            width:80%;
+            margin: 0 auto;
+        }
+        .introduce h2{
+            font-size: 2rem;
+        }
+        .div1{
+            display: flex;
+            justify-content: space-between;
+        }
+        .div1 span{
+            display: inline-block;
+            height:176px;
+            width: 40%;
+        }
+        .div1 span img{
+           width:100%;
+            height: 100%;
+        }
+        .xingb{
+            display: flex;
+            justify-content: space-between;
+            color:#666;
+            margin-top: 2%;
+        }
+</style>
+    <header id="s_header">
+        <span>艺圈</span>
+    </header>
+    <main id="wrapper">
+        <div id="content">
+            <nav class="s_nav">
+                <ul>
+                    <li><a href="">推荐</a></li>
+                    <li><a href="">大神</a></li>
+                    <li><a href="">吐槽</a></li>
+                    <li><a href="">我的</a></li>
+                    <p id="bord"></p>
+                </ul>
+            </nav>
+            <section class="set">
+                <div class="s_content">
+                    <div class="s_net">
+                        <div  ng-repeat="items in datas.recommend">
+                            <div class="title_inner">
+                                <a href="javascript:;" class="title_a"><img ng-src="img/{{items.img1}}" alt="头像"></a>
+                                <p>
+                                    <span>{{items.name}}</span><br/>
+                                    <span style="color:#999999;">{{items.title}}</span>
+                                </p>
+                            </div>
+                            <div class="s_tu">
+                                <div>
+                                    <a href="javascript:;"><img ng-src="img/{{items.img2}}" alt=""></a>
+                                    <a href="javascript:;"><img ng-src="img/{{items.img3}}" alt=""></a>
+                                </div>
+                                <p><span>阅读</span><span>{{items.read}}</span>&nbsp;&nbsp;<span>回复</span><span>{{items.huifu}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s_net">
+                        <div>
+                            <img src="img/a61.png" alt="" style="max-width:100%">
+                            <div class="s_ph">
+                                <p style="border-right: 1px #999 solid;" onclick="window.location.href='../circle/daShenPaiHang.html'"><img src="img/a7_03.png" alt=""><span>大神排行榜</span></p>
+                                <p  onclick="window.location.href='../circle/daShenJingXuan.html'"><img src="img/a8_05.png" alt=""><span>大神精选</span></p>
+                            </div>
+                        </div>
+                        <div style="height:15px;background:#F5F5F5;"></div>
+                        <div class="title_inner">
+                            <a href="javascript:;" class="title_a"><img src="img/tx2.jpg" alt="头像"></a>
+                            <p>
+                                <span>快乐的小星星&nbsp;&nbsp;3小时前</span><br/>
+                                <span style="color:#999999;">中国美学院2学生与西湖落叶十年相遇</span>
+                            </p>
+                        </div>
+                        <div class="s_tu">
+                            <div>
+                                <a href="javascript:;"><img src="img/p1.png" alt=""></a>
+                                <a href="javascript:;"><img src="img/p2.png" alt=""></a>
+                            </div>
+                            <p onclick="window.location.href='../circle/xingXing.html'"><span>阅读1.3W&nbsp;&nbsp;回复1497</span></p>
+                        </div>
+                        <div class="title_inner">
+                            <a href="javascript:;" class="title_a"><img src="img/tx2.jpg" alt="头像"></a>
+                            <p>
+                                <span>快乐的小星星&nbsp;&nbsp;3小时前</span><br/>
+                                <span style="color:#999999;">中国美学院2学生与西湖落叶十年相遇</span>
+                            </p>
+                        </div>
+                        <div class="s_tu">
+                            <div>
+                                <a href="javascript:;"><img src="img/p1.png" alt=""></a>
+                                <a href="javascript:;"><img src="img/p2.png" alt=""></a>
+                            </div>
+                            <p onclick="window.location.href='../circle/xingXing.html'"><span>阅读1.3W&nbsp;&nbsp;回复1497</span></p>
+                        </div>
+                    </div>
+                    <div class="s_net">
+                        <div class="no_1">
+                            <div style="display: flex">
+                                <a href="javascript:;" class="title_a"><img src="img/t3.jpeg" alt="头像"></a>
+                                <p>
+                                    <span style="font-size: 2rem;font-weight: bold;">大神排行榜</span><br/>
+                                    <span>粉丝:<span style="color:#666;" id="num">36万</span></span>
+                                </p>
+                            </div>
+                            <span id="btn">点击关注</span>
+                        </div>
+                        <div class="introduce">
+                            <h2>素描头像怎样画出体积感</h2>
+                            <div class="div1">
+                                <span><img src="img/a12.png" alt=""></span>
+                                <span><img src="img/a13.png" alt=""></span>
+                            </div>
+                            <div class="xingb">
+                                <p><span>星星吧&nbsp;&nbsp;</span><span>3小时前</span></p>
+                                <span>回复768</span></div>
+                        </div>
+                        <div class="introduce">
+                            <h2>素描头像怎样画出体积感</h2>
+                            <div class="div1">
+                                <span><img src="img/a12.png" alt=""></span>
+                                <span><img src="img/a13.png" alt=""></span>
+                            </div>
+                            <div class="xingb">
+                                <p><span>星星吧&nbsp;&nbsp;</span><span>3小时前</span></p>
+                                <span>回复768</span></div>
+                        </div>
+                    </div>
+                    <div class="s_net">
+                        <p class="s_fb">
+                            我发表的
+                        </p>
+                        <div class="publish">
+                            <img src="img/a10_03.png" alt="">
+                            <div>
+                                <h3>素描头像怎样画出体积感</h3>
+                                <p>画里的每个体积都是通过黑白灰的关系体现的<br/>，
+                                    也就是要有谙的地方、灰的地方、亮的地方<br/>。这样。。</p>
+                            </div>
+                        </div>
+                        <div class="f_content"><p>我发表的</p><span class="iconfont icon-arrow-right" onclick="window.location.href='../circle/smallXing.html'"></span></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+<script>
+    //导航
+    $(".s_nav li").click(function(){
+        $(this).children("a").addClass("colors");
+        $(this).siblings().children("a").removeClass("colors");
+        var $ind = $(this).index();
+        var $left = $ind*25+"%";
+        $("#bord").css({"left":$left,"transition":".5s"});
+        var $width = $(".s_net").width();
+        $(".s_content").css({"transform":"translateX("+-$ind*$width+"px)"})
+    });
+    var t = false;
+    $("#btn").click(function(){
+        if(t == true){
+            $("#btn").html("取消关注");
+            t = false;
+        }else{
+            $("#btn").html("点击关注");
+            t = true;
+        }
+    })
+</script>

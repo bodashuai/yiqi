@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="app1">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="scss.css"/>
+		<script src="../js/angular.min.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/jquery-3.1.1.js"></script>
+		<script>
+			angular.module("app1",[]).controller("myctrl",function($scope,$http){
+				$scope.arr={};
+				$scope.add=function(){
+
+						window.location.href="../dongtaixiangxi/index.html"
+					};
+				$http.get("json.json").success(function(data){
+					$scope.arr=data;
+
+				})
+			})
+
+		</script>
+	</head>
+
+	<body ng-controller="myctrl" style="background: #fff;">
+	<div id="box">
+		<header class="head">
+			<nav>
+				<a onclick="window.history.back()"><img src="img/left.png" alt="" /></a>
+				<p>我的动态</p>
+				<img src="img/left.png" alt=""  class="yin"/>
+			</nav>
+		</header>
+		<main>
+			<div>
+
+		<section class="sec1" ng-repeat="i in arr.nei" ng-click="add()">
+			<div class="sec1top">
+				<img ng-src={{i.touimg}}/>
+				<p>{{i.p1}}</p>
+				<span>{{i.span1}}</span>
+				<span>{{i.span2}}</span>
+				<span>{{i.span3}}</span>
+			</div>
+			<div class="tu">
+			<img ng-src={{i.img1}}/>
+			<img ng-src={{i.img2}}/>
+			<img ng-src={{i.img3}}/>
+			</div>
+			<div class="last">
+				<p>{{i.p2}}</p>
+			    <p class="xiao">{{i.p3}}</p>
+			</div>
+			<p style="height: 10px;background: #eee;margin-top: 5px;"></p>
+		</section>
+		</div>
+		</main>
+		</div>
+	</body>
+	<script type="text/javascript">
+			var hgt = document.documentElement.clientHeight;
+			var bod = document.getElementsByTagName("body")[0];
+			bod.style.height = hgt+"px";
+			//适应屏幕高度
+			setTimeout(function(){
+				var myscroll=new IScroll("main",{
+					click:true,
+					tap:true
+				})
+			},500)
+
+		</script>
+</html>
+

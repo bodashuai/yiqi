@@ -1,0 +1,109 @@
+<style>
+    #s_header{
+        display: flex;
+        justify-content: space-between;
+        z-index: 2;
+    }
+    #content{
+       padding: 0 10px;
+    }
+    .title_inner{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .title_inner>span{
+        font-size: 2.6rem;
+    }
+    .title_inner>div{
+        display: flex;
+        justify-content: flex-start;
+        width:100%;
+        padding-top: 15px;
+    }
+    .title_a{
+        display: block;
+        width: 50px;
+        height: 50px;
+        -webkit-border-radius: 50%;
+        overflow: hidden;
+    }
+    .title_a img{
+        width: 100%;
+        height: 100%;
+    }
+    .title_inner p{
+        margin-left: 3%;
+        line-height: 2rem;
+    }
+    .s_my li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eeeeee;
+        font-size: 1.8rem;
+        color: #666666;
+
+    }
+    .s_my p{
+        display: inline-block;
+        font-size: 2rem;
+        padding: 1.5rem 0;
+    }
+    .s_my li>span{
+        font-size: 2.6rem;
+    }
+    .s_sz{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+        font-size: 2rem;
+        background: #ffffff;
+        padding: 0 10px;
+    }
+    .s_sz p{
+        padding: 1.5rem 0;
+    }
+</style>
+<ui-view></ui-view>
+<header id="s_header">
+    <span class="iconfont icon-back" style="font-size: 3rem"></span>
+    <span>我的</span>
+    <span></span>
+</header>
+<main id="wrapper">
+    <div id="content">
+
+        <div class="title_inner">
+            <div>
+                <a href="javascript:;" class="title_a"><img src="img/tx2.jpg" alt="头像"></a>
+                <p onclick="window.location.href='My/xinxi/index.html'">
+                    <strong style="font-size: 1.6rem">只是刚好遇见我</strong><br/>
+                    <span style="color:#999999;">高三学生&nbsp;&nbsp;北京市&nbsp;&nbsp;账号7758521</span>
+                </p>
+            </div>
+            <span class="iconfont icon-arrow-right"></span>
+        </div>
+        <ul class="s_my">
+            <a href="My/dongtai/index.html"><li>
+                <p class="icon icon-sphere">&nbsp;&nbsp;<span>我的动态</span></p>
+                <span class="iconfont icon-arrow-right"></span>
+            </li></a>
+            <a href="My/dongtai/index.html"><li>
+                <p class="icon icon-file-empty">&nbsp;&nbsp;<span>我的订阅</span></p>
+                <span class="iconfont icon-arrow-right"></span>
+            </li></a>
+            <a href="My/wodeshoucang/index.html"><li><p class="icon icon-libreoffice">&nbsp;&nbsp;<span>我的收藏</span></p>
+                <span class="iconfont icon-arrow-right"></span>
+            </li></a>
+            <a>
+                <li><p class="icon icon-star-empty">&nbsp;&nbsp;<span>我的关注</span></p>
+                    <span class="iconfont icon-arrow-right"></span>
+                </li>
+            </a>
+        </ul>
+    </div>
+    <a href="My/shezhi/index.html"><div class="s_sz"><p class="icon icon-svg">&nbsp;&nbsp;<span>设置</span></p><span class="iconfont icon-arrow-right" style="font-size: 2.6rem;"></span></div></a>
+</main>
+<footer id="s_footer"></footer>

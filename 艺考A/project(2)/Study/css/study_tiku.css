@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #303030;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+    font-family: "苹方", "Arail";
+}
+
+#z_header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    background: #ffffff;
+    font-size: 2.4rem;
+    text-align: center;
+    line-height: 5rem;
+    border-bottom: 1px solid #F1F1F1;
+    z-index: 5;
+}
+
+#z_wrapper {
+    position: absolute;
+    top: 5rem;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: gainsboro;
+    overflow: hidden;
+}
+
+#z_mian {
+
+font-size: 1.8rem;
+    background: #F0F0F0;
+}
+
+.click_back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+.z_tiku{
+    margin-top: 1rem;
+
+}
+
+.tiku_nav {
+    background: #ffffff;
+    padding: 0 2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+
+.tiku_nav li {
+    /*transition: 0.5s;*/
+    box-sizing: border-box;
+}
+
+.tiku_nav .active {
+    color: #E972AE;
+    border-bottom: 2px solid #E972AE;
+}
+
+.tiku_of {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+.tiku_of li {
+    width: 30%;
+    padding: 0.5rem 0;
+}
+.tiku_of li:nth-child(1),.tiku_of li:nth-child(2) {
+    width: 45%;
+}
+
+
+.tiku_of img {
+    width: 100%;
+}
+
+.tiku_more {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.z_top {
+    background: #ffffff;
+    padding-left: 1rem;
+    line-height: 3rem;
+}
+.tiku_mian{
+    width: 85%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+}
+
+

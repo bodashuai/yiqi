@@ -1,0 +1,56 @@
+<style type="text/css">
+        .mj_txtDiv{
+            height: 50px;
+            line-height: 30px;
+            padding: 2%;
+         }
+          .mj_txtDiv  p img{
+                width: 15%;
+                border-radius: 100%;
+                float:left;
+                margin-right:2rem;
+            }
+          .mj_txtDiv  h3{
+                font-size: 1.6rem;
+                color: #333;
+             }
+            .mj_txtDiv  h3  span{
+                    margin-left: 30px;
+                }
+           .mj_txtDiv p{
+                font-size: 1.3rem;
+                color: #666;
+            }
+        .mj_imgDiv{
+            padding: 2% 0;
+            display: flex;
+            justify-content: space-around;
+         }
+          .mj_imgDiv  p{
+                width: 47%;
+             }
+            .mj_imgDiv  p img{
+                    width: 100%;
+                }
+        .mj_content>p{
+            display: flex;
+            justify-content: flex-end;
+            font-size: 1.2rem;
+            color: #999;
+            }
+           .mj_content>p span{
+                margin-right: 15px;
+            }
+</style>
+<div class="mj_content" ng-repeat="i in list.tuiJian">
+		<div class="mj_txtDiv">
+			<p><img ng-src={{i.img}}/></p>
+			<h3>{{i.h3}}<span>{{i.span}}</span></h3>
+			<p>{{i.p}}</p>
+		</div>
+		<div class="mj_imgDiv">
+			<p><img ng-src={{i.src1}}/></p>
+			<p><img ng-src={{i.src2}}/></p>
+		</div>
+		<p><span>{{i.span1}}</span><span>{{i.span2}}</span></p>
+</div>
